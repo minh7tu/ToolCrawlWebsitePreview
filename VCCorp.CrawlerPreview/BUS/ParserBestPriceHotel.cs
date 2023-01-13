@@ -146,7 +146,7 @@ namespace VCCorp.CrawlerPreview.BUS
 
                         string jsonPost = KafkaPreview.ToJson<ArticleDTO_BigData>(ent);
                         KafkaPreview kafka = new KafkaPreview();
-                        //await kafka.InsertPost(jsonPost, "crawler-preview-post");
+                        await kafka.InsertPost(jsonPost, "crawler-preview-post");
                         #endregion
 
                     }
@@ -159,6 +159,7 @@ namespace VCCorp.CrawlerPreview.BUS
         private ChromiumWebBrowser _browser = null;
         private readonly HtmlAgilityPack.HtmlDocument _document = new HtmlAgilityPack.HtmlDocument();
         private const string _jsClickShowMoreReview = @"document.getElementsByClassName('btn-more-review')[0].click()";
+
         public ParserBestPriceHotel()
         {
         }
@@ -256,7 +257,7 @@ namespace VCCorp.CrawlerPreview.BUS
 
                                         string jsonPost1 = KafkaPreview.ToJson<ArticleDTO_BigData>(ent);
                                         KafkaPreview kafka1 = new KafkaPreview();
-                                        //await kafka1.InsertPost(jsonPost1, "crawler-preview-post-comment");
+                                        await kafka1.InsertPost(jsonPost1, "crawler-preview-post-comment");
                                         #endregion
                                     }
                                     indexLastComment++;

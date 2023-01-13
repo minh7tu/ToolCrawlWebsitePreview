@@ -44,8 +44,8 @@ namespace VCCorp.CrawlerPreview
             switch (a)
             {
                 case NamePage.BESTPRICE_HOTEL:
-                    //Thread thrd = new Thread(new ThreadStart(ContentCrawlerHotelBp));
-                    //thrd.Start();
+                    Thread thrd = new Thread(new ThreadStart(ContentCrawlerHotelBp));
+                    thrd.Start();
                     Thread thrdDetails = new Thread(new ThreadStart(ContentCrawlerHotelBpDeatail));
                     thrdDetails.Start();
 
@@ -66,10 +66,10 @@ namespace VCCorp.CrawlerPreview
                     }
 
                 case NamePage.BESTPRICE_TOUR:
-                    //Thread thrd1 = new Thread(new ThreadStart(ContentCrawlerTourBp));
-                    //thrd1.Start();
-                    Thread thrdDetails1 = new Thread(new ThreadStart(ContentCrawlerTourBpDeatail));
-                    thrdDetails1.Start();
+                    Thread thrd1 = new Thread(new ThreadStart(ContentCrawlerTourBp));
+                    thrd1.Start();
+                    //Thread thrdDetails1 = new Thread(new ThreadStart(ContentCrawlerTourBpDeatail));
+                    //thrdDetails1.Start();
 
                     while (true)
                     {
